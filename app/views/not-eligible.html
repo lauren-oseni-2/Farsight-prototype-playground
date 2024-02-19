@@ -1,0 +1,33 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Home" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <a href="issued-before.html" class="govuk-back-link">Back</a>
+
+    <div class="govuk-panel govuk-panel--confirmation">
+      <h1 class="govuk-panel__title">
+        You cannot apply for a Great Britain (GB) provisional license
+      </h1>
+    </div>
+
+    <p class="govuk-body">You've been issued with a GB provisional licence before.</p>
+
+    <h2 class="govuk-heading-m">What to do next</h2>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>if your licence is lost, stolen, damaged or destroyed you can replace your driving licence.</li>
+      <li>if your licence details have changed or your licence is out of date you can renew your driving licence.</li>
+      <li>if your licence was revoked under the new Drivers Act, you will need to apply by post.</li>
+      </ul>
+
+<button type="submit" class="govuk-button" data-module="govuk-button"> Return to GOV.UK </button>                      
+
+    
+  </div>
+</div>
+
+{% endblock %}
