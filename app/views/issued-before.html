@@ -9,11 +9,12 @@
 
     <a href="before-you-start.html" class="govuk-back-link">Back</a>
 
-    {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
-<form class="form" action="/issued-before-answer" method="post">
+<form class="form" action="/issued-answer" method="post">
 {{ govukRadios({
   classes: "govuk-radios--inline",
+  name: "issued",
+  value: data['issued'],
   fieldset: {
     legend: {
       text: "Have you been issued with a Great Britain (GB) provisional driving license before?",
@@ -23,21 +24,24 @@
   },
   items: [
     {
-      value: "yes",
+      value: "Yes",
       text: "Yes"
     },
     {
-      value: "no",
+      value: "No",
       text: "No"
     }
   ]
 }) }}
+
+{{ govukButton({
+  text: "Continue"
+}) }}
+
 </form>
 
-    <button id="continueButton" type="submit" class="govuk-button" data-module="govuk-button"> Continue </button> 
-    
-     <!-- Include your JavaScript after the HTML elements -->
-  <script src="routes.js"></script>
+
+  
 
 
     

@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 
-{% set pageName="Home" %}
+{% set pageName="issued-before" %}
 
 {% block content %}
 
@@ -9,11 +9,11 @@
 
     <a href="before-you-start.html" class="govuk-back-link">Back</a>
 
-    <form class="form" action="/address-answer" method="post">
-      
+    <form class="form" action="/country-answer" method="post">
+
       {{ govukRadios({
-        name: "address",
-        value: data['address'],
+        name: "country",
+        value: data['country'],
         fieldset: {
           legend: {
             text: "Where do you live?",
@@ -35,27 +35,8 @@
             text: "Wales"
           },
           {
-            value: "Northern ireland",
+            value: "Northern Ireland",
             text: "Northern Ireland"
-          },
-          {
-            value: "jersey",
-            text: "Jersey"
-          },
-          {
-            value: "isle of Man",
-            text: "Isle of Man"
-          },
-          {
-            value: "Guernsey",
-            text: "Guernsey"
-          },
-          {
-            divider: "or"
-          },
-          {
-            value: "abroad",
-            text: "Any other country"
           }
         ]
       }) }}
@@ -64,10 +45,6 @@
         text: "Continue"
       }) }}
       
-      </form>                 
-
-    
-  </div>
-</div>
+      </form>
 
 {% endblock %}
