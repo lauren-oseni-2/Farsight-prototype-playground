@@ -1,0 +1,32 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Home" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <a href="current-address.html" class="govuk-back-link">Back</a>
+
+
+    <h1 class="govuk-heading-l">Before you continue</h1>
+
+    <p class="govuk-body">You will need to provide a valid photo and signature for your provisional licence.</p>
+    <p class="govuk-body">If you're using a desktop or laptop, you may need to transfer your photos to this 
+      device to complete this service. Some users find this easier on a mobile device with a camera.</p>
+    
+    
+<a href="intend-to-live.html">
+   <button type="submit" class="govuk-button" data-module="govuk-button"> Continue on this device </button>
+</a>  
+
+<p class="govuk-body">
+  <a href="index" class="govuk-link">Exit service</a>.
+</p>
+
+    
+  </div>
+</div>
+
+{% endblock %}

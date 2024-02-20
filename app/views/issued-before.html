@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 
-{% set pageName="Home" %}
+{% set pageName="issued-before" %}
 
 {% block content %}
 
@@ -9,33 +9,36 @@
 
     <a href="before-you-start.html" class="govuk-back-link">Back</a>
 
-    <div class="govuk-form-group">
-      <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-          <h1 class="govuk-fieldset__heading">
-            Have you been issued with a Great Britain (GB) provisional driving licence before?
-          </h1>
-        </legend>
-        <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="yes">
-            <label class="govuk-label govuk-radios__label" for="changedName">
-              Yes
-            </label>
-          </div>
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="no">
-            <label class="govuk-label govuk-radios__label" for="changedName-2">
-              No
-            </label>
-          </div>
-        </div>
-      </fieldset>
-    </div>
+    {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
-    <a href="not-eligible">
-      <button type="submit" class="govuk-button" data-module="govuk-button"> Continue </button>
-   </a>                   
+<form class="form" action="/issued-before-answer" method="post">
+{{ govukRadios({
+  classes: "govuk-radios--inline",
+  fieldset: {
+    legend: {
+      text: "Have you been issued with a Great Britain (GB) provisional driving license before?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+  ]
+}) }}
+</form>
+
+    <button id="continueButton" type="submit" class="govuk-button" data-module="govuk-button"> Continue </button> 
+    
+     <!-- Include your JavaScript after the HTML elements -->
+  <script src="routes.js"></script>
+
 
     
   </div>
