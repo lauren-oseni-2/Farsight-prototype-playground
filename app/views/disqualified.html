@@ -5,19 +5,20 @@
 {% block content %}
 
 <div class="govuk-width-container">
-<a href="before-you-continue.html" class="govuk-back-link">Back</a>
+<a href="lived-outside.html" class="govuk-back-link">Back</a>
 <main class="govuk-main-wrapper">
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form class="form" action="/intend-answer" method="post">
+    <form class="form" action="/disqualified-answer" method="post">
       {{ govukRadios({
-        name: "intend",
-        value: data['intend'],
+        name: "disqualified",
+        value: data['disqualified'],
         fieldset: {
           legend: {
-            text: "Do you intend to live in the UK for more than 185 days in each calendar year",
+            text: "Are you currently disqualified from driving in the UK (including Northern Ireland, 
+            Jersey, Guernsey and Isle of Man) or any other country?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--l"
           }

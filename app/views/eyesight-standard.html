@@ -5,19 +5,20 @@
 {% block content %}
 
 <div class="govuk-width-container">
-<a href="before-you-continue.html" class="govuk-back-link">Back</a>
+<a href="disqualified.html" class="govuk-back-link">Back</a>
 <main class="govuk-main-wrapper">
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form class="form" action="/intend-answer" method="post">
+    <form class="form" action="/eyesight-answer" method="post">
+      
       {{ govukRadios({
-        name: "intend",
-        value: data['intend'],
+        name: "eyesight",
+        value: data['eyesight'],
         fieldset: {
           legend: {
-            text: "Do you intend to live in the UK for more than 185 days in each calendar year",
+            text: "Can you meet the legal eyesight standard for driving?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--l"
           }
@@ -26,6 +27,10 @@
           {
             value: "Yes",
             text: "Yes"
+          },
+          {
+            value: "Yes, with glasses or corrective lenses",
+            text: "Yes, with glasses or corrective lenses"
           },
           {
             value: "No",
@@ -38,7 +43,7 @@
         text: "Continue"
       }) }}
       
-      </form>                
+      </form>                 
 
     
   </div>

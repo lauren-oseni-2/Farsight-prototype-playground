@@ -42,8 +42,51 @@ router.post('/intend-answer', function(request, response) {
 
     var intend = request.session.data['intend']
     if (intend == "Yes"){
-        response.redirect("/before-you-continue")
+        response.redirect("/lived-outside")
     } else {
-        response.redirect("/cannot-apply")
+        response.redirect("/cannot-apply-intend-to-live")
     }
 })
+
+router.post('/outside-answer', function(request, response) {
+
+    var intend = request.session.data['outside']
+    if (intend == "Yes"){
+        response.redirect("/disqualified")
+    } else {
+        response.redirect("/disqualified")
+    }
+})
+
+router.post('/disqualified-answer', function(request, response) {
+
+    var intend = request.session.data['disqualified']
+    if (intend == "Yes"){
+        response.redirect("/cannot-apply-disqualified")
+    } else {
+        response.redirect("/eyesight-standard")
+    }
+})
+
+router.post('/eyesight-answer', function(request, response) {
+
+    var intend = request.session.data['eyesight']
+    if (intend == "No"){
+        response.redirect("/cannot-apply-eyesight")
+    } else {
+        response.redirect("/medical-conditions")
+    }
+})
+
+router.post('/medical-answer', function(request, response) {
+
+    var intend = request.session.data['medical']
+    if (intend == "Yes"){
+        response.redirect("/cannot-apply-medical")
+    } else {
+        response.redirect("/create-an-account")
+    }
+})
+
+
+

@@ -1,0 +1,119 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Home" %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+<a href="eyesight-standard.html" class="govuk-back-link">Back</a>
+<main class="govuk-main-wrapper">
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <form class="form" action="/medical-answer" method="post">
+      
+      <p class="govuk-heading-l">Do you have or have you ever had any of the following medical conditions?</p>
+      <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+        <li>
+          Diabetes controlled by insulin (no need to notify us if you have diabetes controlled by diet, tablets or other injections unless you experience hypoglycemia requiring the assistance of another person)        </li>
+        <li>
+          Epilepsy
+        </li>
+        <li>
+          Any condition affecting both eyes, or the remaining eye if you only have one eye
+        </li>
+        <li>
+          Any condition affecting your visual field or acuity (apart from wearing glasses or corrective lenses)
+        </li>
+        <li>
+          Total loss of sight in one eye
+        </li>
+        <li>
+          Stroke with any symptoms lasting longer than one month
+        </li>
+        <li>
+          Fits or blackouts
+        </li>
+        <li>
+          Any type of brain surgery, severe head injury involving in-patient treatment, or a brain tumour
+        </li>
+        <li>
+          An implanted cardiac pacemaker
+        </li>
+        <li>
+          An implanted cardiac defibrillator (ICD)
+        </li>
+        <li>
+          Repeated attacks of sudden disabling giddiness
+        </li>
+        <li>
+          Any other chronic neurological condition including Multiple Sclerosis, Motor Neurone and Huntington's Disease
+        </li>
+        <li>
+          A serious problem with memory or periods of confusion
+        </li>
+        <li>
+          Persistent alcohol misuse or dependence
+        </li>
+        <li>
+          Persistent drug misuse or dependence
+        </li>
+        <li>
+          Persistent alcohol misuse or dependence
+        </li>
+        <li>
+          Serious psychiatric illness or mental ill health
+        </li>
+        <li>
+          Parkinson's Disease
+        </li>
+        <li>
+          Narcolepsy
+        </li>
+        <li>
+          Obstructive Sleep Apnoea Syndrome
+        </li>
+        <li>
+          Any persisting limb problem which needs driving to be restricted to certain types of vehicles with adapted controls
+        </li>
+        <li>
+          Severe learning disability
+        </li>
+      </ul>
+
+      {{ govukRadios({
+        classes: "govuk-radios--inline",
+        name: "medical",
+        value: data['medical'],
+        fieldset: {
+          legend: {
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes"
+          },
+          {
+            value: "No",
+            text: "No"
+          }
+        ]
+      }) }}
+      
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+      
+      </form>                 
+
+    
+  </div>
+</div>
+</main>
+</div>
+
+{% endblock %}

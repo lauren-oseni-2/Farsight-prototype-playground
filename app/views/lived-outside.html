@@ -1,0 +1,77 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Home" %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+<a href="intend-to-live.html" class="govuk-back-link">Back</a>
+<main class="govuk-main-wrapper">
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <form class="form" action="/outside-answer" method="post">
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+      
+      {% set emailHtml %}
+{{ govukInput({
+  id: "country",
+  name: "country",
+  type: "country",
+  autocomplete: "country",
+  spellcheck: false,
+  classes: "govuk-!-width-one-third",
+  label: {
+    text: "Country"
+  }
+}) }}
+{% endset -%}
+
+
+{{ govukRadios({
+  name: "outside",
+  value: data['outside'],
+  fieldset: {
+    legend: {
+      text: "Have you lived outside of the UK in the last 12 months?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  hint: {
+    text: "This does not include countries you've visited on holiday."
+  },
+  items: [
+    {
+      value: "Yes",
+      text: "Yes",
+      conditional: {
+        html: emailHtml
+      }
+    },
+    {
+      value: "No",
+      text: "No"
+    }
+  ]
+}) }}
+
+{{ govukButton({
+        text: "Continue"
+      }) }}
+      
+      </form>                
+
+
+    
+  </div>
+</div>
+</main>
+</div>
+
+
+
+{% endblock %}

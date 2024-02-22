@@ -1,0 +1,62 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Home" %}
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+<a href="medical-conditions.html" class="govuk-back-link">Back</a>
+<main class="govuk-main-wrapper">
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" action="/medical-answer" method="post">
+      
+      <p class="govuk-heading-l">Driver and vehicles account: create an account or sign in</p>
+      <p class="govuk-body">Creating an account is a new easier way to transact with DVLA.</p>
+      <p class="govuk-body">You can:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          sign in - no further identity checks needed once you create an account
+        <li>
+          renew your driving licence with a new photo
+        </li>
+        <li>
+          view your driving record, for example vehicles you can drive
+        </li>
+        <li>
+          check your penalty points or disqualifications
+        </li>
+        <li>
+          add and view details of your vehicles - including when the MOT expires
+        </li>
+        <li>
+          check the tax rates for your vehicles
+        </li>
+        <li>
+          set up vehicle tax reminders by email and SMS - if you pay tax every 6 or 12 months
+        </li>
+        <li>
+          opt out of vehicle tax reminders by post
+        </li>
+      </ul>
+      
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+      <p class="govuk-body">
+        <a href="#" class="govuk-link govuk-link--no-visited-state">I do not want an account</a>
+      </p>
+      
+      </form>                 
+
+    
+  </div>
+</div>
+</main>
+</div>
+
+{% endblock %}

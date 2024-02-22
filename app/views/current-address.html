@@ -4,10 +4,13 @@
 
 {% block content %}
 
+<div class="govuk-width-container">
+<a href="before-you-start.html" class="govuk-back-link">Back</a>
+<main class="govuk-main-wrapper">
+
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-
-    <a href="before-you-start.html" class="govuk-back-link">Back</a>
 
     <form class="form" action="/address-answer" method="post">
       
@@ -16,7 +19,7 @@
         value: data['address'],
         fieldset: {
           legend: {
-            text: "Where do you live?",
+            text: "Where is your current address?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--l"
           }
@@ -69,5 +72,6 @@
     
   </div>
 </div>
-
+</main>
+</div>
 {% endblock %}

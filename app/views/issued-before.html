@@ -4,11 +4,12 @@
 
 {% block content %}
 
+<div class="govuk-width-container">
+<a href="before-you-start.html" class="govuk-back-link">Back</a>
+<main class="govuk-main-wrapper">
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-
-    <a href="before-you-start.html" class="govuk-back-link">Back</a>
-
 
 <form class="form" action="/issued-answer" method="post">
 {{ govukRadios({
@@ -46,6 +47,8 @@
 
     
   </div>
+</div>
+</main>
 </div>
 
 {% endblock %}
