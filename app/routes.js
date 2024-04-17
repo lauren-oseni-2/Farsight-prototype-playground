@@ -84,7 +84,7 @@ router.post('/medical-answer', function(request, response) {
     if (intend == "Yes"){
         response.redirect("/cannot-apply-medical")
     } else {
-        response.redirect("/create-an-account")
+        response.redirect("/check-your-answers")
     }
 })
 

@@ -1,0 +1,39 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Home" %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+<a href="juggling-balls.html" class="govuk-back-link">Back</a>
+<main class="govuk-main-wrapper">
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" action="/check-your-answers-copy" method="post">
+      
+      {{ govukTextarea({
+        name: "most-impressive-trick",
+        id: "most-impressive-trick",
+        value: data['most-impressive-trick'],
+        label: {
+          text: "What is your most impressive juggling trick?",
+          classes: "govuk-label--l",
+          isPageHeading: true
+        }
+      }) }}
+      
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+      
+      </form>                 
+
+    
+  </div>
+</div>
+</main>
+</div>
+{% endblock %}

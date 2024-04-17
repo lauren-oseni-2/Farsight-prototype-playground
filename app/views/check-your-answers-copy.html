@@ -19,17 +19,17 @@
         rows: [
           {
             key: {
-              text: "Have you been issued with a Great britain (GB) provisional driving license before?"
+              text: "Number of balls you can juggle"
             },
             value: {
-              text: data['issued-before']
+              text: data['how-many-balls']
             },
             actions: {
               items: [
                 {
-                  href: "issued-before",
+                  href: "/juggling-balls",
                   text: "Change",
-                  visuallyHiddenText: "have you been issued with a license before"
+                  visuallyHiddenText: "number of balls you can juggle"
                 }
               ]
             }
@@ -37,17 +37,17 @@
           ,
           {
             key: {
-              text: "Where is your current address?"
+              text: "Your most impressive juggling trick"
             },
             value: {
-              text: data['address']
+              text: data['most-impressive-trick']
             },
             actions: {
               items: [
                 {
-                  href: "current-address",
+                  href: "/juggling-trick",
                   text: "Change",
-                  visuallyHiddenText: "where is your current address"
+                  visuallyHiddenText: "your most impressive juggling trick"
                 }
               ]
             }
@@ -56,15 +56,18 @@
       }) }}
 
       <h2 class="govuk-heading-m">
-        Now create your account
+        Now send your application
       </h2>
 
       
+      <p>
+        By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.
+      </p>
 
-      <form action="/create-an-account" method="post" novalidate>
+      <form action="/confirmation" method="post" novalidate>
 
         {{ govukButton({
-          text: "Create an account"
+          text: "Accept and send"
         }) }}
 
       </form>
